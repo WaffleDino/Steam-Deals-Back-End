@@ -8,17 +8,17 @@ class ApplicationController < Sinatra::Base
   end
  
   get "/users_deals" do
-    all_users_deals = UsersDeals.all
+    all_users_deals = UsersDeal.all
     all_users_deals.to_json
   end
 
   get "/deals" do
-    all_deals = Deals.all
+    all_deals = Deal.all
     all_deals.to_json
   end
 
   post "/deals" do
-   Deal.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink])
+   Deal.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price])
   end
   
   # http://localhost:9292/users

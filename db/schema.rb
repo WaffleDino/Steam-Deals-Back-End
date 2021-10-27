@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_164727) do
+ActiveRecord::Schema.define(version: 2021_10_27_151633) do
 
   create_table "deals", force: :cascade do |t|
     t.string "title"
     t.integer "price"
     t.string "thumb"
     t.string "gamelink"
+    t.string "rating"
+    t.integer "original_price"
   end
 
   create_table "users", force: :cascade do |t|
