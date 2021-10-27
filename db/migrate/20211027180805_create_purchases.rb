@@ -1,6 +1,6 @@
-class CreateDeals < ActiveRecord::Migration[6.1]
+class CreatePurchases < ActiveRecord::Migration[6.1]
   def change
-    create_table :deals do |t|
+    create_table :purchases do |t|
       t.string :title
       t.decimal :price, precision: 10, scale: 2
       t.string :thumb

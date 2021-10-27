@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
- 
+
   get "/users_deals" do
     all_users_deals = UsersDeal.all
     all_users_deals.to_json
@@ -18,13 +18,19 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/deals" do
-   Deal.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price])
+    Deal.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price])
   end
   
   # http://localhost:9292/users
   get '/users' do
     User.all.to_json
   end
+
+  # .filter --> .select in ruby
+  # .filter |
+  # get "/purchases/:user_id" do
+  #   Purchase.filter()
+  # end
 
   # post '/users_deals' do
   #   UsersDeal.create(user_id:, deal_id:)

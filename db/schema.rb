@@ -10,24 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_151633) do
+ActiveRecord::Schema.define(version: 2021_10_27_180805) do
 
   create_table "deals", force: :cascade do |t|
     t.string "title"
-    t.integer "price"
+    t.decimal "price", precision: 10, scale: 2
     t.string "thumb"
     t.string "gamelink"
     t.string "rating"
-    t.integer "original_price"
+    t.decimal "original_price", precision: 10, scale: 2
+    t.integer "user_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "title"
+    t.decimal "price", precision: 10, scale: 2
+    t.string "thumb"
+    t.string "gamelink"
+    t.string "rating"
+    t.decimal "original_price", precision: 10, scale: 2
+    t.integer "user_id"
+  end
+
+  create_table "saved_deals", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "deal_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-  end
-
-  create_table "users_deals", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "deal_id"
   end
 
 end
