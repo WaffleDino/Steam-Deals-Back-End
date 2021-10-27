@@ -26,5 +26,8 @@ class ApplicationController < Sinatra::Base
     User.all.to_json
   end
 
+  # post '/users_deals' do
+  #   UsersDeal.create(user_id:, deal_id:)
+  # end
 end
 
