@@ -1,4 +1,4 @@
-class UsersDeals < ActiveRecord::Base
+class UsersDeal < ActiveRecord::Base
     belongs_to :users
     belongs_to :deals
 end
