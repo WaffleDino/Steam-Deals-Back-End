@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_10_27_180805) do
     t.decimal "price", precision: 10, scale: 2
     t.string "thumb"
     t.string "gamelink"
-    t.string "rating"
+    t.integer "rating"
     t.decimal "original_price", precision: 10, scale: 2
     t.integer "user_id"
   end

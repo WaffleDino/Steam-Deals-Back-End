@@ -5,7 +5,7 @@ class CreateDeals < ActiveRecord::Migration[6.1]
       t.decimal :price, precision: 10, scale: 2
       t.string :thumb
       t.string :gamelink
-      t.string :rating
+      t.integer :rating
       t.decimal :original_price, precision: 10, scale: 2
       t.integer :user_id
     end
