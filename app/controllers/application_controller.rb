@@ -26,6 +26,10 @@ class ApplicationController < Sinatra::Base
     User.all.to_json
   end
 
+  post "/purchases" do
+    Purchase.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price], user_id: params[:user_id])
+  end
+
   # .filter --> .select in ruby
   # .filter |
   # get "/purchases/:user_id" do
