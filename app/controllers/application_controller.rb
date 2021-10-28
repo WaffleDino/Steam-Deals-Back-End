@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/deals" do
-    Deal.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price])
+    Deal.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price], user_id: params[:user_id])
   end
   
   # http://localhost:9292/users
@@ -28,6 +28,14 @@ class ApplicationController < Sinatra::Base
 
   post "/purchases" do
     Purchase.create(title: params[:title], price: params[:price], thumb: params[:thumb], gamelink: params[:gamelink], rating: params[:rating], original_price: params[:original_price], user_id: params[:user_id])
+  end
+
+  get "/purchases" do
+    Purchase.all.to_json
+  end
+
+  delete "/deals/:id" do
+    Deal.find(params[:id]).destroy
   end
 
   # .filter --> .select in ruby

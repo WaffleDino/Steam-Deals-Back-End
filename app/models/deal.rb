@@ -1,6 +1,5 @@
 class Deal < ActiveRecord::Base 
-    has_many :users_deals
-    has_many :users, through: :users_deals
+    has_many :users
 end
 
 # shopping cart
